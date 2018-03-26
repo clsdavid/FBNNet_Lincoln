@@ -1,0 +1,63 @@
+Package: FBNNet
+Title: FBNNet is a R package for analyzing time series data under Fundamental Boolean Network Models
+Version: 0.0.0.9000
+Authors@R: person("Leshi", "Chen", email = "leshi.chen@lincolnuni.ac.nz", role = c("aut", "cre"))
+Description: What the package does (one paragraph).
+Depends: 
+    R (>= 3.3.1),
+    stringr,
+    plyr,
+    parallel,
+    foreach,
+    doParallel,
+    visNetwork,
+    yaml,
+    rlang,
+    ggplot2,
+    factoextra,
+    cluster,
+    magrittr,
+    affy,
+    affyPLM,
+    roxygen2
+License: What license is it under?
+Encoding: UTF-8
+LazyData: false
+Collate:
+   FBNUtility.R
+   FBNCore.R
+   FBNStatistic.R
+   FBNCube.R
+   FBNMiner.R
+   FBNModel.R
+   FBNGraph.R
+   FBNNetwork.R
+   FBNAttractor.R
+   FBNModelProcessor.R
+   FBNNetworkConversion.R
+   FBNParallel.R
+   FBNDataUtility.R
+   FBNChildhoodLeukaemia.R
+   FBNCluster.R
+   FBNDiscreteTimeSeries.R
+   FBNBigHumanGenomeData.R
+   print.FundamentalBooleanNetwork.R
+   print.FBMAttractors.R
+RoxygenNote: 6.0.1
+Imports:
+    stringr,
+    plyr,
+    parallel,
+    foreach,
+    doParallel,
+    visNetwork,
+    yaml,
+    rlang,
+    ggplot2,
+    factoextra,
+    cluster,
+    magrittr,
+    affy,
+    affyPLM,
+    roxygen2
+Suggests:

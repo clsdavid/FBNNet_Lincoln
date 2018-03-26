@@ -1,0 +1,10 @@
+cube:
+  p_value_FBNCube : 0.05
+  thredsod_FBNCube  : 0.5
+  Mutual_toleranceRate  : -1
+  minMutual_range : 0.5
+  enableclusterpruning  : TRUE
+network:
+  error_toleranceRate : 0
+  maxFBNRulesOfActivator  : 5
+  maxFBNRulesOfInhibitor  : 5
