@@ -1,0 +1,75 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Find all genes that are related to the target gene</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for clusteringOnTargetGene {FBNNet}"><tr><td>clusteringOnTargetGene {FBNNet}</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Find all genes that are related to the target gene</h2>
+
+<h3>Description</h3>
+
+<p>Find all genes that are related to the target gene
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+clusteringOnTargetGene(targetGene, currentState, previousState, timeseriesCube,
+  genes, temporal = 1, useParallel = FALSE)
+</pre>
+
+
+<h3>Arguments</h3>
+
+<table summary="R argblock">
+<tr valign="top"><td><code>targetGene</code></td>
+<td>
+<p>The target gene</p>
+</td></tr>
+<tr valign="top"><td><code>currentState</code></td>
+<td>
+<p>current combined gene state i.e. the gene state at t</p>
+</td></tr>
+<tr valign="top"><td><code>previousState</code></td>
+<td>
+<p>previous combined gene state i.e. the gene state at t-1</p>
+</td></tr>
+<tr valign="top"><td><code>timeseriesCube</code></td>
+<td>
+<p>a list of samples in which a sample contains gene and time points</p>
+</td></tr>
+<tr valign="top"><td><code>genes</code></td>
+<td>
+<p>a list of genes that the related genes re mined from</p>
+</td></tr>
+<tr valign="top"><td><code>temporal</code></td>
+<td>
+<p>1: d means temporal = t-1 ... t-d</p>
+</td></tr>
+</table>
+
+
+<h3>Value</h3>
+
+<p>A list of genes that are related to the target genes
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+mat1&lt;-matrix(c("1","0","0","1","0","0","0","1","1"),3,3, dimnames=list(c("gene1","gene2","gene3"),c("1","2","3")))
+mat2&lt;-matrix(c("1","1","0","1","0","1","1","1","0"),3,3, dimnames=list(c("gene1","gene2","gene3"),c("1","2","3")))
+listtest&lt;-list(mat1,mat2)
+completeState&lt;-extractGeneStateFromTimeSeriesCube(listtest)
+getCurrentState&lt;-completeState
+getpreviousState&lt;-completeState
+getCurrentState&lt;-getCurrentState[,-1]#remove the first one
+getpreviousState&lt;-getpreviousState[,-length(colnames(getpreviousState))] #remove the last one
+clusteringOnTargetGene("gene1",getCurrentState,getpreviousState,listtest,c("gene1","gene2","gene3"),1,FALSE)
+</pre>
+
+<hr /><div style="text-align: center;">[Package <em>FBNNet</em> version 0.0.0.9000 <a href="00Index.html">Index</a>]</div>
+</body></html>

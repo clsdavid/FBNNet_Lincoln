@@ -1,0 +1,67 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: This method is used to reconstruct time series data</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for reconstructTimeseries {FBNNet}"><tr><td>reconstructTimeseries {FBNNet}</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>This method is used to reconstruct time series data</h2>
+
+<h3>Description</h3>
+
+<p>This method is used to reconstruct time series data
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+reconstructTimeseries(fbnCube, fbnnetwork, timeseriesCube, interval = 1,
+  maxTimepoints = 100)
+</pre>
+
+
+<h3>Arguments</h3>
+
+<table summary="R argblock">
+<tr valign="top"><td><code>fbnCube</code></td>
+<td>
+<p>A pre constructed Orchard cube</p>
+</td></tr>
+<tr valign="top"><td><code>fbnnetwork</code></td>
+<td>
+<p>An object of FBNNetwork</p>
+</td></tr>
+<tr valign="top"><td><code>timeseriesCube</code></td>
+<td>
+<p>An original time series data that contains samples, genes and time points. It can be as list of samples contain genes and the initial time point.</p>
+</td></tr>
+<tr valign="top"><td><code>interval</code></td>
+<td>
+<p>An interval is the time gap between two time points</p>
+</td></tr>
+</table>
+
+
+<h3>Value</h3>
+
+<p>A list object that contains reconstructed time series and FBN network
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+mat1&lt;-matrix(c("1","0","0","1","0","0","0","1","1"),3,3, dimnames=list(c("gene1","gene2","gene3"),c("1","2","3")))
+mat2&lt;-matrix(c("1","1","0","1","0","1","1","1","0"),3,3, dimnames=list(c("gene1","gene2","gene3"),c("1","2","3")))
+listtestOriginal&lt;-list(mat1,mat2)
+cube&lt;-constructFBNCube(c("gene1","gene2"),c("gene1","gene2","gene3"),listtestOriginal,4,1,FALSE)
+network&lt;-mineFBNNetwork(cube,c("gene1","gene2"))
+mat1&lt;-matrix(c("1","1","0"),3,1, dimnames=list(c("gene1","gene2","gene3"),c("1")))
+mat2&lt;-matrix(c("1","1","1"),3,1, dimnames=list(c("gene1","gene2","gene3"),c("1")))
+listtestInitial&lt;-list(mat1,mat2)
+result&lt;-reconstructTimeseries(cube,network,listtestInitial,1,1,3)
+</pre>
+
+<hr /><div style="text-align: center;">[Package <em>FBNNet</em> version 0.0.0.9000 <a href="00Index.html">Index</a>]</div>
+</body></html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Split a compressed gene regulate function into symbols</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for splitExpression {FBNNet}"><tr><td>splitExpression {FBNNet}</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Split a compressed gene regulate function into symbols</h2>
+
+<h3>Description</h3>
+
+<p>Split a compressed gene regulate function into symbols
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+splitExpression(expression, outputType = 1, lowerCase = FALSE)
+</pre>
+
+
+<h3>Arguments</h3>
+
+<table summary="R argblock">
+<tr valign="top"><td><code>expression</code></td>
+<td>
+<p>A regulate function like GeneA&amp;GeneB&amp;!GeneC</p>
+</td></tr>
+<tr valign="top"><td><code>outputType</code></td>
+<td>
+<p>A output type with two options 1 the splition included &quot;!&quot;, others not included &quot;!&quot;</p>
+</td></tr>
+<tr valign="top"><td><code>lowerCase</code></td>
+<td>
+<p>Is lower case required?</p>
+</td></tr>
+</table>
+
+
+<h3>Value</h3>
+
+<p>The return is a vector of the input regulate function, a example is &quot;GeneA&quot; &quot;&amp;&quot; &quot;GeneB&quot; &quot;&amp;&quot; &quot;!&quot; &quot;GeneC&quot;
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+splitExpression("GeneA&amp;GeneB&amp;!GeneC")
+splitExpression("GeneA&amp;GeneB&amp;!GeneC",1)
+splitExpression("GeneA&amp;GeneB&amp;!GeneC",0)
+</pre>
+
+<hr /><div style="text-align: center;">[Package <em>FBNNet</em> version 0.0.0.9000 <a href="00Index.html">Index</a>]</div>
+</body></html>

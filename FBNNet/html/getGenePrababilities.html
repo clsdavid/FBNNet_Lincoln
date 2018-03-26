@@ -1,0 +1,87 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: A core method to calculate all measures for a target gene...</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for getGenePrababilities {FBNNet}"><tr><td>getGenePrababilities {FBNNet}</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>A core method to calculate all measures for a target gene with a condition gene</h2>
+
+<h3>Description</h3>
+
+<p>A core method to calculate all measures for a target gene with a condition gene
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+getGenePrababilities(timeSeriesCube, fixedgenestate, targetgene, newgene,
+  geneStates = NULL, preGeneStates = NULL, temporal = 1,
+  temporalGeneStates = NULL)
+</pre>
+
+
+<h3>Arguments</h3>
+
+<table summary="R argblock">
+<tr valign="top"><td><code>timeSeriesCube</code></td>
+<td>
+<p>A list object contains samples in which a sample contains genes in row and time points in column</p>
+</td></tr>
+<tr valign="top"><td><code>fixedgenestate</code></td>
+<td>
+<p>prefixed gene state</p>
+</td></tr>
+<tr valign="top"><td><code>targetgene</code></td>
+<td>
+<p>The tage gene's name</p>
+</td></tr>
+<tr valign="top"><td><code>newgene</code></td>
+<td>
+<p>The new added conditional gene</p>
+</td></tr>
+<tr valign="top"><td><code>geneStates</code></td>
+<td>
+<p>The current combined gene state</p>
+</td></tr>
+<tr valign="top"><td><code>preGeneStates</code></td>
+<td>
+<p>The previous combined gene state</p>
+</td></tr>
+<tr valign="top"><td><code>temporal</code></td>
+<td>
+<p>The temporal setting and the default value is 1</p>
+</td></tr>
+<tr valign="top"><td><code>temporalGeneStates</code></td>
+<td>
+<p>The combined gene state for temporal</p>
+</td></tr>
+</table>
+
+
+<h3>Value</h3>
+
+<p>A list of measures
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+genesInput&lt;-c("CycD","p27","CycE","E2F")
+testseries&lt;-list()
+testseries[[1]]&lt;-matrix(c(1,1,1,1,0,1,0,1,1,1,1,1,0,0,0,1),nrow=4,ncol=4,byrow=FALSE,dimnames&lt;-list(genesInput,c("1","2","3","4")))
+testseries[[2]]&lt;-matrix(c(1,1,0,1,0,1,0,1,0,1,0,1,1,0,0,1),nrow=4,ncol=4,byrow=FALSE,dimnames&lt;-list(genesInput,c("1","2","3","4")))
+testseries[[3]]&lt;-matrix(c(1,0,0,1,1,1,0,1,1,1,0,1,1,1,0,1),nrow=4,ncol=4,byrow=FALSE,dimnames&lt;-list(genesInput,c("1","2","3","4")))
+
+getCurrentState&lt;-extractGeneStateFromTimeSeriesCube(testseries)
+getCurrentState&lt;-getCurrentState[,-1]#remove the first one
+
+getpreviousState&lt;-extractGeneStateFromTimeSeriesCube(testseries)
+getpreviousState&lt;-getpreviousState[,-length(colnames(getpreviousState))] #remove the last one
+probability&lt;-getGenePrababilities(testseries,NULL,"CycD","p27",getCurrentState,getpreviousState,1)
+</pre>
+
+<hr /><div style="text-align: center;">[Package <em>FBNNet</em> version 0.0.0.9000 <a href="00Index.html">Index</a>]</div>
+</body></html>

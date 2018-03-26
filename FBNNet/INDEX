@@ -1,0 +1,71 @@
+FBNBenchmark            A benchmark type function to test a complete
+                        process of FBN model
+FBNDataReduction        Remove duplidate timeseries sample data
+FBNNet-package          FBNNet is a R package for analyzing time series
+                        data under Fundamental Boolean Network Models
+FBNNetwork.Graph        Executing a list of processes in parallel with
+                        decreasing list
+FBNNetwork.Graph.ConvertToNetworkGraphicObject
+                        This method is used to convert the FBN network
+                        into a FBN networkobject for graphs
+FBNNetwork.Graph.StaticNetwork
+                        Display a static network in a slice
+FBNNetwork.Graph.StaticNetworkInSlice
+                        Display a dynamic network in a slice
+MiningFromShortTimeSeriesDataUnsupervisionTwoStages
+                        coming later
+buildProbabilityTreeOnTargetGene
+                        Find all genes that are related to the target
+                        gene
+checkSimilarity         Check the similarity between time series
+clusteringOnTargetGene
+                        Find all genes that are related to the target
+                        gene
+constructFBNCube        Create an Orchard cube
+convertMinedResultToFBNNetwork
+                        convert the mined result to FBNNetwork object
+convertToFBNNetwork     Convert a boolean network object to fundamental
+                        boolean function object
+doNonParallelWork       Executing a list of processes not in parallel
+doNonParallelWorkDecrease
+                        Executing a list of processes in parallel with
+                        decreasing list
+doParallelWork          Executing a list of processes in parallel
+extractGeneStateFromTimeSeriesCube
+                        An internal method to extract gene state from
+                        timeseries cube
+generateFBNInteraction
+                        generate FBN interaction
+generateSimilarReport   Generate similarity report
+getFBMSuccessor         This method is used to calculate the next state
+getGenePrababilities    A core method to calculate all measures for a
+                        target gene with a condition gene
+getProbabilityFromCubeBasedOnInput
+                        An internal method to get the probability of
+                        regulatory function from the cube
+getRelatedAffyRawData   A benchmark type function to test a complete
+                        process of FBN model Step 1, read Affy data
+getncbiseq              Retrieving genome sequence data using SeqinR.
+                        The code is a sample from the book "a little
+                        book of r for bioinformatic"
+identifyDifferentiallyExpressedGenes
+                        A benchmark type function to test a complete
+                        process of FBN model Step 3, identify
+                        significantly expressed genes, which are
+                        strongly related with the samples / study
+                        purposes
+isSatisfied             An utility function to verify whether or not
+                        the input expression and the required gene
+                        input are marched
+loadFBNNetwork          Load FBN network data into a FBN network object
+mineFBNNetwork          Mine FBN Networks from an Orchard cube
+normalizeTimesereisRawData
+                        A benchmark type function to test a complete
+                        process of FBN model Step 2, normalizing data
+randomSelection         A random selection function denoted as P[]
+reconstructTimeseries   This method is used to reconstruct time series
+                        data
+splitExpression         Split a compressed gene regulate function into
+                        symbols
+timeseriesReduction     Remove some time points out from the target
+                        time series
