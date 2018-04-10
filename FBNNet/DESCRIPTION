@@ -23,4 +23,4 @@ Imports: stringr, plyr, parallel, foreach, doParallel, visNetwork,
 Suggests:
 Author: Leshi Chen [aut, cre]
 Maintainer: Leshi Chen <leshi.chen@lincolnuni.ac.nz>
-Built: R 3.4.3; ; 2018-03-26 21:33:08 UTC; windows
+Built: R 3.4.3; ; 2018-04-10 01:01:27 UTC; windows
